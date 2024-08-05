@@ -1,0 +1,98 @@
+/*==============================MODALS==============================*/
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 100;
+    visibility: hidden;
+    opacity: 0;
+    &_full{
+        background: $bgcolor-accent;
+        background: #22211C;
+        .modal__close{
+            top: 25px;
+            right: 25px;
+        }
+    }
+    &.open {
+        visibility: visible;
+        opacity: 1;
+    }  
+    &__bg{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 10;
+    }
+    &__body {
+        position: relative;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 100%;
+    }  
+    &__close {
+        position: absolute;
+        top: -35px;
+        right: -35px;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 3px;
+        background: #CA9969;
+        color: #fff;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 10;
+    }  
+    &__content {
+        position: relative;
+        padding: 35px 30px;
+        width: 500px;
+        background: #fff;
+        border-radius: 10px;
+        z-index: 15;
+    }  
+    &__title{
+        font-size: 25px;
+        font-weight: 600;
+        color: #000;
+    }
+    &__nav{
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        li{
+            margin: 0 15px;
+            a{
+                display: block;
+                text-align: center;
+                padding: 12px 15px;
+                font-size: 18px;
+                font-weight: 600;
+                border: 1px solid $main-color;;
+                color: $main-color;
+                border-radius: 5px;
+                &.active{
+                    background: $main-color;
+                    color: $bgcolor-accent;
+                }
+            }
+        }
+    }
+    &__inner{
+        flex-grow: 1;
+        padding: 20px 30px;
+        width: 100%;
+    }
+}

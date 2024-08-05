@@ -1,0 +1,111 @@
+/*==============================RESET==============================*/
+*,
+:before,
+:after {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.clr:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+html, body, div,
+dl, dt, dd, ol, ul, li,
+h1, h2, h3, h4, h5, h6, p, hr,
+img, a, em, span, strong, 
+form, label, input, button, select,
+table, thead, tbody, tfoot, tr, th, td, textarea {
+    border: 0;
+    outline: none;
+    background: none;
+    vertical-align: baseline;
+    font: inherit;
+}
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+sub {
+    bottom: -0.25em;
+}
+sup {
+    top: -0.5em;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+input,
+select,
+textarea,
+button {
+    color: #686868;
+    outline: none;
+}
+a:hover,
+a:focus,
+a.active {
+    text-decoration: none;
+    outline: none;
+}
+a[href^=tel]{
+    color:inherit;
+}
+button{
+    cursor: pointer;
+}
+input::-webkit-input-placeholder {
+    color: #686868;
+}
+input::-moz-placeholder {
+    color: #686868;
+}
+input:-moz-placeholder {
+    color: #686868;
+}
+input:-ms-input-placeholder {
+    color: #686868;
+}
+input:focus::-webkit-input-placeholder{
+    color: transparent!important;
+}
+input:focus::-moz-placeholder{
+    color: transparent!important;
+}
+input:focus:-moz-placeholder{
+    color: transparent!important;
+}
+input:focus:-ms-input-placeholder {
+    color: transparent!important;
+}
+textarea::-webkit-input-placeholder {
+    color: #686868;
+}
+textarea::-moz-placeholder {
+    color: #686868;
+}
+textarea:-moz-placeholder {
+    color: #686868;
+}
+textarea:-ms-input-placeholder {
+    color: #686868;
+}
+textarea:focus::-webkit-input-placeholder{
+    color: transparent!important;
+}
+textarea:focus::-moz-placeholder{
+    color: transparent!important;
+}
+textarea:focus:-moz-placeholder{
+    color: transparent!important;
+}
+textarea:focus:-ms-input-placeholder {
+    color: transparent!important;
+}

@@ -1,0 +1,24 @@
+/*==============================JOURNAL==============================*/
+.journal-tabs{
+    &__list{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 25px;
+    }
+    &__btn{
+        margin: 0 15px;
+        display: block;
+        text-align: center;
+        padding: 12px 15px;
+        font-size: 18px;
+        font-weight: 600;
+        border: 1px solid $main-color;;
+        color: $main-color;
+        cursor: pointer;
+        border-radius: 5px;
+        &.active{
+            background: $main-color;
+            color: $bgcolor-accent;
+        }
+    }
+}

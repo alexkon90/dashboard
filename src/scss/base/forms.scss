@@ -1,0 +1,45 @@
+/*==============================FORM ELEMENTS==============================*/
+.btn {
+    padding: 10px 20px;
+    font-family: "OpenSans";
+    text-align: center;
+    font-weight: 700;
+    background: #ca9969;
+    color: #fff;
+    border-radius: 5px;
+}
+.form {
+    padding: 30px;
+    border: 1px solid #ca9969;
+    font-family: "OpenSans";
+    border-radius: 10px;
+}
+.form__item {
+    margin-bottom: 20px;
+}
+.form__label {
+    display: block;
+    margin-bottom: 15px;
+    text-align: center;
+}
+.form__input {
+    width: 100%;
+    height: 40px;
+    padding: 0 15px;
+    color: #ca9969;
+    border: 1px solid #ca9969;
+    border-radius: 5px;
+}
+.form__area {
+    padding: 15px;
+    width: 100%;
+    line-height: 1.2;
+    font-family: "OpenSans";
+    color: #ca9969;
+    border: 1px solid #ca9969;
+    border-radius: 10px;
+}
+.form__button {
+    padding-top: 10px;
+    text-align: center;
+}

@@ -1,0 +1,111 @@
+/*==============================GENERAL==============================*/
+html, body{
+    position: relative;
+    min-width: 320px;
+}
+body{ 
+    font-family: 'OpenSans';
+    line-height: 1;
+    background: #22211C;
+	color: #CA9969;
+} 
+.wrapper{
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+}
+.center-wrapper{
+	position: relative;
+	margin: 0 auto;
+	padding: 0 15px;
+	max-width: 1170px;
+}
+h1, h2, h3, h4, h5, h6, .title_1, .title_2, .title_3, .title_4, .title_5, .title_6{
+	margin-bottom: 20px;
+	line-height: 1.2;
+}
+h1, .title_1{
+    font-size: 30px;
+}
+h2, .title_2{
+	margin-bottom: 12px;
+	font-size: 20px;
+	line-height: 1;
+	text-align: center;
+}
+p{
+	margin-bottom: 15px;
+    font-size: 18px;
+	line-height: 1.2;
+}
+a{
+	outline: none;
+	text-decoration: none;
+	transition: all 0.3s ease;
+}
+ul, ol{
+	list-style: none;
+}
+strong{
+    font-weight: 700;
+}
+em{
+    font-style: italic;
+}
+img{
+	height: auto;
+	vertical-align: top;
+}
+table{
+	width: 100%;
+	border: 1px solid #CA9969;
+	th{
+		padding: 10px 15px;
+		text-align: left;
+		border: 1px solid #CA9969;
+	}
+	td{
+		padding: 10px 15px;
+		border: 1px solid #CA9969;
+	}
+}
+.show{
+    display: block;
+}
+.hide{
+    display: none;
+}
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+/*--------------------icons--------------------*/
+.ic {
+	display: inline-block;
+	flex-shrink: 0;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: 50% 50%;
+	width: 100%;
+	height: 100%;
+}
+.ic-prev {
+    background-image: url(../img/icons/icon-arrow-prev.svg);
+}
+.ic-money {
+    background-image: url(../img/icons/icon-sphere-money.svg);
+}
+.ic-prof {
+    background-image: url(../img/icons/icon-sphere-profession.svg);
+}
+.ic-health {
+    background-image: url(../img/icons/icon-sphere-health.svg);
+}
+.ic-self {
+    background-image: url(../img/icons/icon-sphere-self.svg);
+}

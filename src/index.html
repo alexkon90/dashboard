@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head> 
+	<meta charset="UTF-8">
+	<title>Dashboard</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+<div class="wrapper">
+    <main class="main">
+        <header class="header">
+            <div class="header__col header__col_sidebar">
+                <div class="header-actions">
+                    <a href="#" class="header-actions__btn" title="Цели"><img src="./img/icons/icon-goal.svg" alt="img"></a>
+                    <a href="#" class="header-actions__btn" title="Финансы"><img src="./img/icons/icon-wallet.svg" alt="img"></a>
+                    <a href="#" class="header-actions__btn" title="Тренинг"><img src="./img/icons/icon-gym.svg" alt="img"></a>
+                </div>
+            </div>
+            <div class="header__col header__col_middle">
+                <div class="header-goals">
+                    <a href="#" class="header-goals__btn">III Квартал 2024 - Цели</a>
+                </div>
+            </div>
+            <div class="header__col header__col_sidebar">
+                <div class="header-actions">
+                    <a href="#" class="header-actions__btn" title="Проекты"><img src="./img/icons/icon-projects.svg" alt="img"></a>
+                    <a href="#" class="header-actions__btn btn_journal" title="Журнал"><img src="./img/icons/icon-journal.svg" alt="img"></a>
+                    <a href="#" class="header-actions__btn" title="Профиль"><img src="./img/icons/icon-profile.svg" alt="img"></a>
+                </div>
+            </div>
+        </header><!-- end header -->
+        
+        <div class="content">
+            <div class="content__sidebar">
+                <div class="content__block">
+                    
+                </div>
+            </div><!-- end content__sidebar -->
+
+            <div class="content__middle">
+                <div class="content__top">
+                    <div class="content__block">
+
+                    </div>
+                </div><!-- end content__top -->
+                
+                <div class="content__bottom">
+                    <div class="content__bottom-col">
+                        <div class="content__bottom-row">
+                            <div class="content__block">
+
+                            </div>
+                            <div class="content__block">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content__bottom-col">
+                        <div class="content__block">
+                            <div class="habits">
+                                <h2 class="habits__title">Привычки</h2>
+                                <div class="habits__body">
+                                    <a href="#" class="habits__add">+</a>
+                                    <div class="habits__body-inner">
+                                        <div class="habits__days">
+                                            <div class="habits__days-item">Пн</div>
+                                            <div class="habits__days-item">Вт</div>
+                                            <div class="habits__days-item">Ср</div>
+                                            <div class="habits__days-item">Чт</div>
+                                            <div class="habits__days-item">Пт</div>
+                                            <div class="habits__days-item">Сб</div>
+                                            <div class="habits__days-item">Вс</div>
+                                        </div>
+                                        <div class="habits__list">
+                
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- end habits -->
+                        </div>
+                    </div>
+                </div><!-- end content__bottom -->
+            </div><!-- end content-middle -->
+
+            <div class="content__sidebar">
+                <div class="content__block">
+
+                </div>
+            </div><!-- end content__sidebar -->
+        </div><!-- end content -->
+    </main><!-- end main -->
+</div><!-- end wrapper -->
+
+
+    <div id="modal_habits" class="modal">
+        <div class="modal__bg close"></div>
+        <div class="modal__body">
+            <div class="modal__content">
+                <div class="modal__close close">x</div>
+                <h2 class="modal__title">Добавить привычку</h2>
+                <div class="m_habits-form">
+                    <div class="m_habits-form__item">
+                        <div class="m_habits-form__label">Название привычки</div>
+                        <input id="habits_input" type="text" class="m_habits-form__input form__input" placeholder="Введите название" maxlength="15">
+                    </div>
+                    <div class="m_habits-form__buttons">
+                        <button id="habits_add" class="m_habits-form__btn btn">Добавить</button>
+                        <button id="habits_cancel" class="m_habits-form__btn btn btn_border close">Отмена</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- end modal_habits -->
+
+    <div id="modal_journal" class="modal modal_full">
+        <div class="modal__body">
+            <div class="modal__close close">x</div>
+            <ul class="modal__nav">
+                <li><a href="#" class="modal__nav-btn">Цели</a></li>
+                <li><a href="#" class="modal__nav-btn">Финансы</a></li>
+                <li><a href="#" class="modal__nav-btn">Тренинг</a></li>
+                <li><a href="#" class="modal__nav-btn">Проекты</a></li>
+                <li><a href="#" class="modal__nav-btn active">Журнал</a></li>
+                <li><a href="#" class="modal__nav-btn">Профиль</a></li>
+            </ul>
+            <div class="modal__inner">
+                <div class="journal">
+                    <div class="journal-tabs">
+                        <div class="journal-tabs__list">
+                            <div class="journal-tabs__btn active">Привычки</div>
+                            <div class="journal-tabs__btn">Продуктивность</div>
+                        </div>
+                        <div class="journal-tabs__body">
+                            <div class="journal-tabs__section">
+                                <div class="habits-tracker">
+                                    <div class="habits-tracker__info">
+                                        <h2 class="habits-tracker__title">Статистика</h2>
+                                        <div class="habits-tracker__list">
+
+                                        </div>
+                                    </div>
+                                    <h2 class="habits-tracker__title">Журнал</h2>
+                                    <div class="habits-tracker__row">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="journal-tabs__section">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- end modal_journal -->
+
+
+    <script src="./js/main.js"></script>
+</body>
+</html>
+
