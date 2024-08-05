@@ -1,10 +1,15 @@
 /*==============================FORM ELEMENTS==============================*/
 .btn {
-    padding: 10px 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 20px;
+    height: 40px;
     font-family: "OpenSans";
     text-align: center;
     font-weight: 700;
     background: #ca9969;
+    border: 1px solid #ca9969;
     color: #fff;
     border-radius: 5px;
 }

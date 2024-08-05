@@ -20,5 +20,9 @@ function modals(triggerSelector, modalSelector, closeSelector) {
     });
 }
 
+function closeModal () {
+    document.querySelector('.modal').classList.remove('open');
+}
+
 modals('.habits__add', '#modal_habits', '#modal_habits .close');
 modals('.btn_journal', '#modal_journal', '#modal_journal .close');

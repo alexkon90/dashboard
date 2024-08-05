@@ -70,10 +70,10 @@ table{
 	}
 }
 .show{
-    display: block;
+    display: block !important;
 }
 .hide{
-    display: none;
+    display: none !important;
 }
 @keyframes fade {
     0% {

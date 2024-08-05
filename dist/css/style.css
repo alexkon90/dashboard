@@ -259,11 +259,11 @@ table td {
 }
 
 .show {
-    display: block;
+    display: block !important;
 }
 
 .hide {
-    display: none;
+    display: none !important;
 }
 
 @keyframes fade {
@@ -308,11 +308,16 @@ table td {
 
 /*==============================FORM ELEMENTS==============================*/
 .btn {
-    padding: 10px 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 20px;
+    height: 40px;
     font-family: "OpenSans";
     text-align: center;
     font-weight: 700;
     background: #ca9969;
+    border: 1px solid #ca9969;
     color: #fff;
     border-radius: 5px;
 }
@@ -993,6 +998,20 @@ table td {
     cursor: pointer;
 }
 
+.habits__send {
+    position: absolute;
+    top: -45px;
+    height: 35px;
+    right: 0;
+    background: transparent;
+    color: #CA9969;
+}
+
+.habits__send:hover {
+    background: #CA9969;
+    color: #12110F;
+}
+
 .habits__days {
     display: flex;
     justify-content: flex-end;
@@ -1064,7 +1083,7 @@ table td {
     align-items: center;
     justify-content: center;
     width: 38px;
-    height: 30px;
+    height: 28px;
     background: #CA9969;
     font-weight: 600;
     color: #000;

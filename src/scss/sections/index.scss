@@ -445,6 +445,18 @@
         color: #fff;
         cursor: pointer;
     }
+    &__send{
+        position: absolute;
+        top: -45px;
+        height: 35px;
+        right: 0;
+        background: transparent;
+        color: $main-color;
+        &:hover{
+            background: $main-color;
+            color: $bgcolor-accent;
+        }
+    }
     &__days{
         display: flex;
         justify-content: flex-end;
@@ -507,7 +519,7 @@
         align-items: center;
         justify-content: center;
         width: 38px;
-        height: 30px;
+        height: 28px;
         background: #CA9969;
         font-weight: 600;
         color: #000;
