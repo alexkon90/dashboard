@@ -14,21 +14,21 @@
         <header class="header">
             <div class="header__col header__col_sidebar">
                 <div class="header-actions">
-                    <a href="#" class="header-actions__btn" title="Цели"><img src="./img/icons/icon-goal.svg" alt="img"></a>
-                    <a href="#" class="header-actions__btn" title="Финансы"><img src="./img/icons/icon-wallet.svg" alt="img"></a>
-                    <a href="#" class="header-actions__btn" title="Тренинг"><img src="./img/icons/icon-gym.svg" alt="img"></a>
+                    <a href="#" class="header-actions__btn btn_goals" title="Цели"><img src="./img/icons/icon-goal.svg" alt="img"></a>
+                    <a href="#" class="header-actions__btn btn_finances" title="Финансы"><img src="./img/icons/icon-wallet.svg" alt="img"></a>
+                    <a href="#" class="header-actions__btn btn_training" title="Тренинг"><img src="./img/icons/icon-gym.svg" alt="img"></a>
                 </div>
             </div>
             <div class="header__col header__col_middle">
                 <div class="header-goals">
-                    <a href="#" class="header-goals__btn">III Квартал 2024 - Цели</a>
+                    <a href="#" class="header-goals__btn btn_quartergoals">III Квартал 2024 - Цели</a>
                 </div>
             </div>
             <div class="header__col header__col_sidebar">
                 <div class="header-actions">
-                    <a href="#" class="header-actions__btn" title="Проекты"><img src="./img/icons/icon-projects.svg" alt="img"></a>
+                    <a href="#" class="header-actions__btn btn_projects" title="Проекты"><img src="./img/icons/icon-projects.svg" alt="img"></a>
                     <a href="#" class="header-actions__btn btn_journal" title="Журнал"><img src="./img/icons/icon-journal.svg" alt="img"></a>
-                    <a href="#" class="header-actions__btn" title="Профиль"><img src="./img/icons/icon-profile.svg" alt="img"></a>
+                    <a href="#" class="header-actions__btn btn_profile" title="Профиль"><img src="./img/icons/icon-profile.svg" alt="img"></a>
                 </div>
             </div>
         </header><!-- end header -->
@@ -88,7 +88,7 @@
 
             <div class="content__sidebar">
                 <div class="content__block">
-                    
+
                 </div>
             </div><!-- end content__sidebar -->
         </div><!-- end content -->
@@ -116,16 +116,208 @@
         </div>
     </div><!-- end modal_habits -->
 
+
+    <div id="modal_finances" class="modal modal_full">
+        <div class="modal__body">
+            <div class="modal__close close">x</div>
+            <ul class="modal__nav">
+                <li><a href="#" class="modal__nav-btn btn_goals">Цели</a></li>
+                <li><a href="#" class="modal__nav-btn active">Финансы</a></li>
+                <li><a href="#" class="modal__nav-btn btn_training">Тренинг</a></li>
+                <li><a href="#" class="modal__nav-btn btn_projects">Проекты</a></li>
+                <li><a href="#" class="modal__nav-btn btn_journal">Журнал</a></li>
+                <li><a href="#" class="modal__nav-btn btn_profile">Профиль</a></li>
+            </ul>
+            <div class="modal__inner">
+                <div class="finances">
+                    <div class="wallet-tabs tabs">
+                        <div class="wallet-tabs-list tabs-list">
+                            <div class="wallet-tabs__btn tabs__btn active">Информация</div>
+                            <div class="wallet-tabs__btn tabs__btn">Баланс</div>
+                        </div>
+                        <div class="wallet-tabs-body">
+                            <div class="wallet-tabs-section tabs-section active">
+                                <div class="wallet-finances">
+                                    <div class="wallet-finances-item">
+                                        <div class="wallet-finances-item__caption">Приват:</div>
+                                        <div class="wallet-finances-item__value">-35 000 грн</div>
+                                    </div>
+                                    <div class="wallet-finances-item">
+                                        <div class="wallet-finances-item__caption">Альфа:</div>
+                                        <div class="wallet-finances-item__value">-60 000 грн</div>
+                                    </div>
+                                    <div class="wallet-finances-item">
+                                        <div class="wallet-finances-item__caption">Наличка:</div>
+                                        <div class="wallet-finances-item__value">0</div>
+                                    </div>
+                                    <div class="wallet-finances-item">
+                                        <div class="wallet-finances-item__caption">Youmoney:</div>
+                                        <div class="wallet-finances-item__value">0 руб</div>
+                                    </div>
+                                    <div class="wallet-finances-item">
+                                        <div class="wallet-finances-item__caption">PayPal:</div>
+                                        <div class="wallet-finances-item__value">0 usd</div>
+                                    </div>
+                                    <div class="wallet-finances-item">
+                                        <div class="wallet-finances-item__caption">Bihance:</div>
+                                        <div class="wallet-finances-item__value">0 usdt</div>
+                                    </div>
+                                </div>
+                                <div class="wallet-dcouments">
+                                    <div class="wallet-dcouments__caption">Баланс</div>
+                                    <div class="wallet-dcouments-row">
+                                        <div class="wallet-dcouments__item"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wallet-tabs-section tabs-section">
+                                <div class="wallet-balance">
+                                    <div class="balance-filters">
+                                        <a href="#" class="balance-filters__btn active">Январь</a>
+                                        <a href="#" class="balance-filters__btn">Февраль</a>
+                                        <a href="#" class="balance-filters__btn">Март</a>
+                                        <a href="#" class="balance-filters__btn">Апрель</a>
+                                        <a href="#" class="balance-filters__btn">Май</a>
+                                        <a href="#" class="balance-filters__btn">Июнь</a>
+                                        <a href="#" class="balance-filters__btn">Июль</a>
+                                        <a href="#" class="balance-filters__btn">Август</a>
+                                        <a href="#" class="balance-filters__btn">Сентябрь</a>
+                                        <a href="#" class="balance-filters__btn">Октябрь</a>
+                                        <a href="#" class="balance-filters__btn">Ноябрь</a>
+                                        <a href="#" class="balance-filters__btn">Декарь</a>
+                                    </div>
+                                    <div class="wallet-balance__body">
+                                        <div class="wallet-balance__leftside">
+                                            <div class="wallet-balance-categories">
+                                                <div class="ibc-item">
+                                                    <div class="ibc-item__icon"></div>
+                                                    <div class="ibc-item__content">
+                                                        <div class="ibc-item__title">Квартплата</div>
+                                                        <div class="ibc-item__value">3 500 грн</div>
+                                                    </div>
+                                                </div>
+                                                <div class="ibc-item">
+                                                    <div class="ibc-item__icon"></div>
+                                                    <div class="ibc-item__content">
+                                                        <div class="ibc-item__title">Коммуналка</div>
+                                                        <div class="ibc-item__value">3 500 грн</div>
+                                                    </div>
+                                                </div>
+                                                <div class="ibc-item">
+                                                    <div class="ibc-item__icon"></div>
+                                                    <div class="ibc-item__content">
+                                                        <div class="ibc-item__title">Еда</div>
+                                                        <div class="ibc-item__value">3 500 грн</div>
+                                                    </div>
+                                                </div>
+                                                <div class="ibc-item">
+                                                    <div class="ibc-item__icon"></div>
+                                                    <div class="ibc-item__content">
+                                                        <div class="ibc-item__title">Сервисы</div>
+                                                        <div class="ibc-item__value">3 500 грн</div>
+                                                    </div>
+                                                </div>
+                                                <div class="ibc-item">
+                                                    <div class="ibc-item__icon"></div>
+                                                    <div class="ibc-item__content">
+                                                        <div class="ibc-item__title">Покупки</div>
+                                                        <div class="ibc-item__value">3 500 грн</div>
+                                                    </div>
+                                                </div>
+                                                <div class="ibc-item">
+                                                    <div class="ibc-item__icon"></div>
+                                                    <div class="ibc-item__content">
+                                                        <div class="ibc-item__title">Одежда</div>
+                                                        <div class="ibc-item__value">3 500 грн</div>
+                                                    </div>
+                                                </div>
+                                                <div class="ibc-item">
+                                                    <div class="ibc-item__icon"></div>
+                                                    <div class="ibc-item__content">
+                                                        <div class="ibc-item__title">Спорт</div>
+                                                        <div class="ibc-item__value">3 500 грн</div>
+                                                    </div>
+                                                </div>
+                                                <div class="ibc-item">
+                                                    <div class="ibc-item__icon"></div>
+                                                    <div class="ibc-item__content">
+                                                        <div class="ibc-item__title">Развлечения</div>
+                                                        <div class="ibc-item__value">3 500 грн</div>
+                                                    </div>
+                                                </div>
+                                                <div class="ibc-item">
+                                                    <div class="ibc-item__icon"></div>
+                                                    <div class="ibc-item__content">
+                                                        <div class="ibc-item__title">Разное</div>
+                                                        <div class="ibc-item__value">3 500 грн</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="wallet-balance__rightside">
+                                            <div class="wallet-balance__graph">
+                                                <div class="wallet-balance__graph-item balance_income"></div>
+                                                <div class="wallet-balance__graph-item balance_expense"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>               
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- end modal_finances -->
+
+    <div id="modal_training" class="modal modal_full">
+        <div class="modal__body">
+            <div class="modal__close close">x</div>
+            <ul class="modal__nav">
+                <li><a href="#" class="modal__nav-btn btn_goals">Цели</a></li>
+                <li><a href="#" class="modal__nav-btn btn_finances">Финансы</a></li>
+                <li><a href="#" class="modal__nav-btn active">Тренинг</a></li>
+                <li><a href="#" class="modal__nav-btn btn_projects">Проекты</a></li>
+                <li><a href="#" class="modal__nav-btn btn_journal">Журнал</a></li>
+                <li><a href="#" class="modal__nav-btn btn_profile">Профиль</a></li>
+            </ul>
+            <div class="modal__inner">
+                <div class="training">
+
+                </div>
+            </div>
+        </div>
+    </div><!-- end modal_training -->
+
+    <div id="modal_projects" class="modal modal_full">
+        <div class="modal__body">
+            <div class="modal__close close">x</div>
+            <ul class="modal__nav">
+                <li><a href="#" class="modal__nav-btn btn_goals">Цели</a></li>
+                <li><a href="#" class="modal__nav-btn btn_finances">Финансы</a></li>
+                <li><a href="#" class="modal__nav-btn btn_training">Тренинг</a></li>
+                <li><a href="#" class="modal__nav-btn active">Проекты</a></li>
+                <li><a href="#" class="modal__nav-btn btn_journal">Журнал</a></li>
+                <li><a href="#" class="modal__nav-btn btn_profile">Профиль</a></li>
+            </ul>
+            <div class="modal__inner">
+                <div class="projects">
+                            
+                </div>
+            </div>
+        </div>
+    </div><!-- end modal_projects -->
+
     <div id="modal_journal" class="modal modal_full">
         <div class="modal__body">
             <div class="modal__close close">x</div>
             <ul class="modal__nav">
-                <li><a href="#" class="modal__nav-btn">Цели</a></li>
-                <li><a href="#" class="modal__nav-btn">Финансы</a></li>
-                <li><a href="#" class="modal__nav-btn">Тренинг</a></li>
-                <li><a href="#" class="modal__nav-btn">Проекты</a></li>
+                <li><a href="#" class="modal__nav-btn btn_goals">Цели</a></li>
+                <li><a href="#" class="modal__nav-btn btn_finances">Финансы</a></li>
+                <li><a href="#" class="modal__nav-btn btn_training">Тренинг</a></li>
+                <li><a href="#" class="modal__nav-btn btn_projects">Проекты</a></li>
                 <li><a href="#" class="modal__nav-btn active">Журнал</a></li>
-                <li><a href="#" class="modal__nav-btn">Профиль</a></li>
+                <li><a href="#" class="modal__nav-btn btn_profile">Профиль</a></li>
             </ul>
             <div class="modal__inner">
                 <div class="journal">
@@ -158,6 +350,25 @@
             </div>
         </div>
     </div><!-- end modal_journal -->
+
+    <div id="modal_profile" class="modal modal_full">
+        <div class="modal__body">
+            <div class="modal__close close">x</div>
+            <ul class="modal__nav">
+                <li><a href="#" class="modal__nav-btn btn_goals">Цели</a></li>
+                <li><a href="#" class="modal__nav-btn btn_finances">Финансы</a></li>
+                <li><a href="#" class="modal__nav-btn btn_training">Тренинг</a></li>
+                <li><a href="#" class="modal__nav-btn btn_projects">Проекты</a></li>
+                <li><a href="#" class="modal__nav-btn btn_journal">Журнал</a></li>
+                <li><a href="#" class="modal__nav-btn active">Профиль</a></li>
+            </ul>
+            <div class="modal__inner">
+                <div class="profile">
+
+                </div>
+            </div>
+        </div>
+    </div><!-- end modal_profile -->
 
 
     <script src="./js/main.js"></script>

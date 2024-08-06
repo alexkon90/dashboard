@@ -306,6 +306,18 @@ table td {
     background-image: url(../img/icons/icon-sphere-self.svg);
 }
 
+.ic-check {
+    background-image: url(../img/icons/icon-check.svg);
+}
+
+.ic-remove {
+    background-image: url(../img/icons/icon-remove.svg);
+}
+
+.ic-skip {
+    background-image: url(../img/icons/icon-skip.svg);
+}
+
 /*==============================FORM ELEMENTS==============================*/
 .btn {
     display: inline-flex;
@@ -379,7 +391,6 @@ table td {
 
 .modal_full {
     background: #12110F;
-    background: #22211C;
 }
 
 .modal_full .modal__close {
@@ -1056,6 +1067,8 @@ table td {
 .habits-item__name {
     position: relative;
     flex-grow: 1;
+    line-height: 1.1;
+    font-size: 15.5px;
 }
 
 .habits-item__name .edit_input {
@@ -1133,16 +1146,35 @@ table td {
     border-radius: 5px;
 }
 
+.habit_states div:hover {
+    opacity: 0.8;
+}
+
 .habit_states div.habit_done {
     background: green;
+}
+
+.habit_states div.habit_done i {
+    width: 17px;
+    height: 17px;
 }
 
 .habit_states div.habit_fail {
     background: red;
 }
 
+.habit_states div.habit_fail i {
+    width: 15px;
+    height: 15px;
+}
+
 .habit_states div.habit_skip {
     background: gray;
+}
+
+.habit_states div.habit_skip i {
+    width: 20px;
+    height: 20px;
 }
 
 .m_habits-form {

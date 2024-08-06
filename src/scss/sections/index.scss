@@ -495,6 +495,8 @@
     &__name{
         position: relative;
         flex-grow: 1;
+        line-height: 1.1;
+        font-size: 15.5px;
         .edit_input{
             position: absolute;
             left: 0;
@@ -561,14 +563,29 @@
         background: #CA9969;
         cursor: pointer;
         border-radius: 5px;
+        &:hover{
+            opacity: 0.8;
+        }
         &.habit_done{
             background: green;
+            i{
+                width: 17px;
+                height: 17px;
+            }
         }
         &.habit_fail{
             background: red;
+            i{
+                width: 15px;
+                height: 15px;
+            }
         }
         &.habit_skip{
             background: gray;
+            i{
+                width: 20px;
+                height: 20px;
+            }
         }
     }
 }

@@ -56,30 +56,49 @@ window.addEventListener('DOMContentLoaded', () => {
     function modals(triggerSelector, modalSelector, closeSelector) {
         const modalBtn = document.querySelectorAll(triggerSelector),
               modalContent = document.querySelector(modalSelector),
-              modalClose = document.querySelectorAll(closeSelector);
+              modalClose = document.querySelectorAll(closeSelector),
+              modals = document.querySelectorAll('.modal');
     
         modalBtn.forEach(btn => {
             btn.addEventListener('click', (e) => {
                 if (e.target) {
                     e.preventDefault();
                 }
+    
+                modals.forEach(item => {
+                    item.classList.remove('open');
+                });
+    
                 modalContent.classList.add('open');
             });
         });
     
         modalClose.forEach(btn => {
             btn.addEventListener('click', () => {
+                modals.forEach(item => {
+                    item.classList.remove('open');
+                });
+                
                 modalContent.classList.remove('open');
             });
         });
     }
     
     function closeModal () {
-        document.querySelector('.modal').classList.remove('open');
+        document.querySelectorAll('.modal').forEach(item => {
+            item.classList.remove('open');
+        });
     }
     
     modals('.habits__add', '#modal_habits', '#modal_habits .close');
+    
+    modals('.btn_quartergoals', '#modal_quartergoals', '#modal_quartergoals .close');
+    modals('.btn_goals', '#modal_goals', '#modal_goals .close');
+    modals('.btn_finances', '#modal_finances', '#modal_finances .close');
+    modals('.btn_training', '#modal_training', '#modal_training .close');
+    modals('.btn_projects', '#modal_projects', '#modal_projects .close');
     modals('.btn_journal', '#modal_journal', '#modal_journal .close');
+    modals('.btn_profile', '#modal_profile', '#modal_profile .close');
 
     /*------------------------------Habits------------------------------*/
     /*
@@ -94,6 +113,7 @@ window.addEventListener('DOMContentLoaded', () => {
     
     const habits = document.querySelector('.habits');
     const habitsContainer = document.querySelector('.habits__list');
+    const habitsTrackerMain = document.querySelector('.habits-tracker');
     const habitsTrackerContainer = document.querySelector('.habits-tracker__row');
     const currentDate = new Date(Date.now());
     
@@ -182,6 +202,10 @@ window.addEventListener('DOMContentLoaded', () => {
     
     // Toggle habit's state
     function toggleHabits () {
+        const habitsSend = document.querySelector('.habits__send');
+        const habitsItems = habits.querySelectorAll('.habits-item__day');
+        const habitsArr = Array.from(habitsItems);
+    
         habitsContainer.addEventListener('click', function (e) {
             const target = e.target;
     
@@ -189,9 +213,9 @@ window.addEventListener('DOMContentLoaded', () => {
                 const habitState = document.createElement('div');
                 habitState.classList.add('habit_states')
                 habitState.innerHTML = `
-                    <div class="habit_done">+</div>
-                    <div class="habit_fail">-</div>
-                    <div class="habit_skip">></div>
+                    <div class="habit_done" title="Выполнено"><i class="ic ic-check"></i></div>
+                    <div class="habit_fail" title="Провалено"><i class="ic ic-remove"></i></div>
+                    <div class="habit_skip" title="Пропустить"><i class="ic ic-skip"></i></div>
                 `
                 document.querySelectorAll('.habit_states').forEach(item => {
                     item.remove();
@@ -199,17 +223,21 @@ window.addEventListener('DOMContentLoaded', () => {
                 target.append(habitState);
             }
             
-            if (target.classList.contains('habit_done')) {
+            if (target.classList.contains('habit_done') || target.parentElement.classList.contains('habit_done')) {
                 target.closest('.habits-item__day').className = 'habits-item__day done completed';
                 document.querySelector('.habit_states').remove();
             }
-            else if(target.classList.contains('habit_fail')) {
+            else if(target.classList.contains('habit_fail') || target.parentElement.classList.contains('habit_fail')) {
                 target.closest('.habits-item__day').className = 'habits-item__day done fail';
                 document.querySelector('.habit_states').remove();
             }
-            else if(target.classList.contains('habit_skip')) {
+            else if(target.classList.contains('habit_skip') || target.parentElement.classList.contains('habit_skip')) {
                 target.closest('.habits-item__day').className = 'habits-item__day done skip';
                 document.querySelector('.habit_states').remove();
+            }
+    
+            if (habitsArr.every(item => item.classList.contains('done'))) {
+                habitsSend.classList.remove('hide');
             }
     
             saveHabits();
@@ -237,7 +265,7 @@ window.addEventListener('DOMContentLoaded', () => {
     disableHabits();
     
     // Push habits in tracker
-    function habitsTracker () {
+    function habitsTracker() {
         const habitsBody = document.querySelector('.habits__body-inner').innerHTML;
         const habitsTrackerblock = document.createElement('div');
         habitsTrackerblock.classList.add('habits-tracker__block');
@@ -252,28 +280,21 @@ window.addEventListener('DOMContentLoaded', () => {
     
     // Reset habits
     function habitsReset () {
-        const habitsItems = habits.querySelectorAll('.habits-item__day');
         const habitsSend = document.querySelector('.habits__send');
-        const habitsArr = Array.from(habitsItems);
-        const deadline = currentDate.getDay() === 1 && 
-                         currentDate.getHours() == 19 && 
-                         currentDate.getMinutes() === 41 && 
-                         currentDate.getSeconds() === 30;
-    
-        if (habitsArr.every(item => item.classList.contains('done'))) {
-            habitsSend.classList.remove('hide');
-        }
+        const habitsItems = habits.querySelectorAll('.habits-item__day');
     
         habitsSend.addEventListener('click', function () {
+            habitsTracker();        
+            habitsTrackerStats();
+            saveHabitsTracker();
+    
             this.classList.add('hide');
             habitsItems.forEach(item => {
                 item.className = 'habits-item__day';
             });   
+            
+            saveHabits();
         });
-    
-        saveHabits ();
-        habitsTracker();
-        saveHabitsTracker();
     }
     habitsReset();
     
@@ -288,7 +309,8 @@ window.addEventListener('DOMContentLoaded', () => {
             }
             return acc;
         }, {});
-        
+    
+       
         const uniqueHabitsArr = Object.values(uniqueHabits);
     
         uniqueHabitsArr.forEach(item => {
@@ -317,18 +339,17 @@ window.addEventListener('DOMContentLoaded', () => {
             `
             habitsStatsContainer.append(habitsStatsItem); 
         });
-    
     }
     habitsTrackerStats();
     
     // Save habits in LS
     function saveHabitsTracker () {
-        localStorage.setItem('habitsTracker', habitsTrackerContainer.innerHTML)
+        localStorage.setItem('habitsTracker', habitsTrackerMain.innerHTML)
     }
     function saveHabits () {
         localStorage.setItem('habitsHtml', habitsContainer.innerHTML)
     }
     if (localStorage.getItem('habitsTracker')) {
-        habitsTrackerContainer.innerHTML = localStorage.getItem('habitsTracker');
+        habitsTrackerMain.innerHTML = localStorage.getItem('habitsTracker');
     }
 });
