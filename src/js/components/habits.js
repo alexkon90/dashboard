@@ -11,6 +11,7 @@
 
 const habits = document.querySelector('.habits');
 const habitsContainer = document.querySelector('.habits__list');
+const habitsTrackerMain = document.querySelector('.habits-tracker');
 const habitsTrackerContainer = document.querySelector('.habits-tracker__row');
 const currentDate = new Date(Date.now());
 
@@ -99,6 +100,10 @@ editHabits();
 
 // Toggle habit's state
 function toggleHabits () {
+    const habitsSend = document.querySelector('.habits__send');
+    const habitsItems = habits.querySelectorAll('.habits-item__day');
+    const habitsArr = Array.from(habitsItems);
+
     habitsContainer.addEventListener('click', function (e) {
         const target = e.target;
 
@@ -106,9 +111,9 @@ function toggleHabits () {
             const habitState = document.createElement('div');
             habitState.classList.add('habit_states')
             habitState.innerHTML = `
-                <div class="habit_done">+</div>
-                <div class="habit_fail">-</div>
-                <div class="habit_skip">></div>
+                <div class="habit_done" title="Выполнено"><i class="ic ic-check"></i></div>
+                <div class="habit_fail" title="Провалено"><i class="ic ic-remove"></i></div>
+                <div class="habit_skip" title="Пропустить"><i class="ic ic-skip"></i></div>
             `
             document.querySelectorAll('.habit_states').forEach(item => {
                 item.remove();
@@ -116,17 +121,21 @@ function toggleHabits () {
             target.append(habitState);
         }
         
-        if (target.classList.contains('habit_done')) {
+        if (target.classList.contains('habit_done') || target.parentElement.classList.contains('habit_done')) {
             target.closest('.habits-item__day').className = 'habits-item__day done completed';
             document.querySelector('.habit_states').remove();
         }
-        else if(target.classList.contains('habit_fail')) {
+        else if(target.classList.contains('habit_fail') || target.parentElement.classList.contains('habit_fail')) {
             target.closest('.habits-item__day').className = 'habits-item__day done fail';
             document.querySelector('.habit_states').remove();
         }
-        else if(target.classList.contains('habit_skip')) {
+        else if(target.classList.contains('habit_skip') || target.parentElement.classList.contains('habit_skip')) {
             target.closest('.habits-item__day').className = 'habits-item__day done skip';
             document.querySelector('.habit_states').remove();
+        }
+
+        if (habitsArr.every(item => item.classList.contains('done'))) {
+            habitsSend.classList.remove('hide');
         }
 
         saveHabits();
@@ -154,7 +163,7 @@ function disableHabits () {
 disableHabits();
 
 // Push habits in tracker
-function habitsTracker () {
+function habitsTracker() {
     const habitsBody = document.querySelector('.habits__body-inner').innerHTML;
     const habitsTrackerblock = document.createElement('div');
     habitsTrackerblock.classList.add('habits-tracker__block');
@@ -169,28 +178,21 @@ function habitsTracker () {
 
 // Reset habits
 function habitsReset () {
-    const habitsItems = habits.querySelectorAll('.habits-item__day');
     const habitsSend = document.querySelector('.habits__send');
-    const habitsArr = Array.from(habitsItems);
-    const deadline = currentDate.getDay() === 1 && 
-                     currentDate.getHours() == 19 && 
-                     currentDate.getMinutes() === 41 && 
-                     currentDate.getSeconds() === 30;
-
-    if (habitsArr.every(item => item.classList.contains('done'))) {
-        habitsSend.classList.remove('hide');
-    }
+    const habitsItems = habits.querySelectorAll('.habits-item__day');
 
     habitsSend.addEventListener('click', function () {
+        habitsTracker();        
+        habitsTrackerStats();
+        saveHabitsTracker();
+
         this.classList.add('hide');
         habitsItems.forEach(item => {
             item.className = 'habits-item__day';
         });   
+        
+        saveHabits();
     });
-
-    saveHabits ();
-    habitsTracker();
-    saveHabitsTracker();
 }
 habitsReset();
 
@@ -205,7 +207,8 @@ function habitsTrackerStats () {
         }
         return acc;
     }, {});
-    
+
+   
     const uniqueHabitsArr = Object.values(uniqueHabits);
 
     uniqueHabitsArr.forEach(item => {
@@ -234,18 +237,16 @@ function habitsTrackerStats () {
         `
         habitsStatsContainer.append(habitsStatsItem); 
     });
-
 }
 habitsTrackerStats();
 
 // Save habits in LS
 function saveHabitsTracker () {
-    localStorage.setItem('habitsTracker', habitsTrackerContainer.innerHTML)
+    localStorage.setItem('habitsTracker', habitsTrackerMain.innerHTML)
 }
 function saveHabits () {
     localStorage.setItem('habitsHtml', habitsContainer.innerHTML)
 }
 if (localStorage.getItem('habitsTracker')) {
-    habitsTrackerContainer.innerHTML = localStorage.getItem('habitsTracker');
+    habitsTrackerMain.innerHTML = localStorage.getItem('habitsTracker');
 }
-
