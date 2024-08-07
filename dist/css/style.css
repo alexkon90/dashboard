@@ -332,15 +332,15 @@ table td {
     font-family: "OpenSans";
     text-align: center;
     font-weight: 700;
-    background: #ca9969;
-    border: 1px solid #ca9969;
+    background: #CA9969;
+    border: 1px solid #CA9969;
     color: #fff;
     border-radius: 5px;
 }
 
 .form {
     padding: 30px;
-    border: 1px solid #ca9969;
+    border: 1px solid #CA9969;
     font-family: "OpenSans";
     border-radius: 10px;
 }
@@ -359,8 +359,8 @@ table td {
     width: 100%;
     height: 40px;
     padding: 0 15px;
-    color: #ca9969;
-    border: 1px solid #ca9969;
+    color: #CA9969;
+    border: 1px solid #CA9969;
     border-radius: 5px;
 }
 
@@ -369,8 +369,8 @@ table td {
     width: 100%;
     line-height: 1.2;
     font-family: "OpenSans";
-    color: #ca9969;
-    border: 1px solid #ca9969;
+    color: #CA9969;
+    border: 1px solid #CA9969;
     border-radius: 10px;
 }
 
@@ -704,7 +704,7 @@ table td {
     font-weight: 500;
     width: 25px;
     height: 25px;
-    background: #ca9969;
+    background: #CA9969;
     color: #fff;
     cursor: pointer;
     border-radius: 50%;
@@ -790,8 +790,8 @@ table td {
 }
 
 .goals-day__item_farm {
-    border-color: #fc9228;
-    color: #fc9228;
+    border-color: #0cbe54;
+    color: #0cbe54;
 }
 
 .goals-day__item_int {
@@ -805,8 +805,8 @@ table td {
 }
 
 .goals-day__item_spr {
-    border-color: #0cbe54;
-    color: #0cbe54;
+    border-color: #fc9228;
+    color: #fc9228;
 }
 
 .goals-day__item.complete {
@@ -814,7 +814,7 @@ table td {
 }
 
 .goals-day__item.complete.goals-day__item_farm {
-    background: #fc9228;
+    background: #0cbe54;
 }
 
 .goals-day__item.complete.goals-day__item_int {
@@ -826,7 +826,7 @@ table td {
 }
 
 .goals-day__item.complete.goals-day__item_spr {
-    background: #0cbe54;
+    background: #fc9228;
 }
 
 .goals-day__item.fail {
@@ -916,16 +916,16 @@ table td {
 }
 
 .goals-week__item_farm {
-    border-color: #fc9228;
-    color: #fc9228;
+    border-color: #0cbe54;
+    color: #0cbe54;
 }
 
 .goals-week__item_farm .goals-week__item-progress {
-    border-color: #fc9228;
+    border-color: #0cbe54;
 }
 
 .goals-week__item_farm .goals-week__item-progress span {
-    background: #fc9228;
+    background: #0cbe54;
 }
 
 .goals-week__item_int {
@@ -955,16 +955,16 @@ table td {
 }
 
 .goals-week__item_spr {
-    border-color: #0cbe54;
-    color: #0cbe54;
+    border-color: #fc9228;
+    color: #fc9228;
 }
 
 .goals-week__item_spr .goals-week__item-progress {
-    border-color: #0cbe54;
+    border-color: #fc9228;
 }
 
 .goals-week__item_spr .goals-week__item-progress span {
-    background: #0cbe54;
+    background: #fc9228;
 }
 
 .goals-week__item-title {
@@ -1114,7 +1114,6 @@ table td {
 }
 
 .habits-item__day.completed {
-    background: #0cbe54;
     background: green;
 }
 
@@ -1336,7 +1335,7 @@ table td {
 }
 
 .productivity__title {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     font-weight: 600;
 }
 
@@ -1369,8 +1368,8 @@ table td {
     cursor: pointer;
 }
 
-.productivity__item .prod_farm {
-    background: #fc9228;
+.productivity__item .prod_fin {
+    background: #0cbe54;
 }
 
 .productivity__item .prod_prof {
@@ -1382,57 +1381,66 @@ table td {
 }
 
 .productivity__item .prod_self {
-    background: #0cbe54;
+    background: #fc9228;
 }
 
 .timer {
-    opacity: 0;
+    position: relative;
+}
+
+.timer__body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    width: 280px;
-    height: 280px;
-    border: 8px solid #ca9969;
-    border-radius: 50%;
 }
 
-.timer__new {
+.timer__add {
+    position: absolute;
+    top: 0;
+    right: 0;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     margin-left: 5px;
     width: 22px;
     height: 22px;
-    background: #ca9969;
+    background: #CA9969;
     color: #fff;
     border-radius: 50%;
 }
 
 .timer__clock {
-    font-size: 75px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 165px;
+    height: 165px;
+    border: 5px solid #CA9969;
+    border-radius: 50%;
+    font-size: 70px;
     font-weight: 700;
     text-align: center;
-    color: #ca9969;
+    color: #CA9969;
 }
 
 .timer__type {
     display: flex;
     justify-content: center;
+    margin-bottom: 20px;
 }
 
 .timer__type-item {
-    flex: 0 0 30px;
-    max-width: 30px;
-    margin: 0 5px 25px;
+    flex: 0 0 50px;
+    max-width: 50px;
+    margin: 0 5px;
     height: 24px;
-    background: #ca9969;
+    background: #CA9969;
     border-radius: 5px;
 }
 
 .timer__type-item_farm {
-    background: #fc9228;
+    background: #0cbe54;
 }
 
 .timer__type-item_int {
@@ -1444,28 +1452,77 @@ table td {
 }
 
 .timer__type-item_spr {
-    background: #0cbe54;
+    background: #fc9228;
 }
 
 .timer__actions {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
 }
 
 .timer__actions-btn {
-    flex: 0 0 40px;
-    max-width: 40px;
-    margin: 30px 5px 0;
-    height: 24px;
+    flex: 0 0 calc(33% - 5px);
+    max-width: calc(33% - 5px);
+    height: 28px;
     padding: 3px;
     cursor: pointer;
     text-align: center;
-    background: #ca9969;
+    background: #CA9969;
     border-radius: 5px;
 }
 
 .timer__actions-btn img {
     max-height: 100%;
+}
+
+.timer__actions2 {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.timer__actions2-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    padding: 6px 8px;
+    flex-grow: 1;
+    cursor: pointer;
+    text-align: center;
+    font-weight: 600;
+    background: #CA9969;
+    color: #000;
+    border-radius: 5px;
+}
+
+.timer__actions2-btn:first-child {
+    margin-right: 10px;
+}
+
+.timer__actions2-btn img {
+    max-height: 100%;
+}
+
+.modal-timer__item {
+    margin-bottom: 20px;
+}
+
+.modal-timer__label {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.modal-timer__buttons {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.modal-timer__btn {
+    margin: 0 10px;
 }
 
 /*==============================GOALS==============================*/

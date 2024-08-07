@@ -88,7 +88,45 @@
 
             <div class="content__sidebar">
                 <div class="content__block">
-
+                    <div class="productivity">
+                        <div class="productivity__block">
+                            <div class="timer">
+                                <h2 class="productivity__title">Таймер</h2>
+                                <button type="button" class="timer__add">+</button>
+                                <div class="timer__body">
+                                    <div class="timer__type">
+                                        <div class="timer__type-item timer__type-item_farm"></div>
+                                        <div class="timer__type-item timer__type-item_int"></div>
+                                        <div class="timer__type-item timer__type-item_str"></div>
+                                        <div class="timer__type-item timer__type-item_spr"></div>
+                                    </div>
+                                    <div class="timer__clock">120</div>
+                                    <div class="timer__actions">
+                                        <div class="timer__actions-btn"><img src='./img/icons/icon-refresh.svg' alt='img'></div>
+                                        <div class="timer__actions-btn"><img src='./img/icons/icon-play.svg' alt='img'></div>
+                                        <div class="timer__actions-btn"><img src='./img/icons/icon-complete.svg' alt='img'></div>
+                                    </div>
+                                    <div class="timer__actions2">
+                                        <div class="timer__actions2-btn">Старт</div>
+                                        <div class="timer__actions2-btn">Перерыв</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="productivity__block">
+                            <h2 class="productivity__title">Продуктивность</h2>
+                            <div class="productivity__row">
+                                <div class="productivity__col">
+                                    <div class="productivity__item">
+                                        <span class="prod_fin"></span>
+                                        <span class="prod_self"></span>
+                                        <span class="prod_health"></span>
+                                        <span class="prod_prof"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- end productivity -->
                 </div>
             </div><!-- end content__sidebar -->
         </div><!-- end content -->
@@ -116,6 +154,30 @@
             </div>
         </div>
     </div><!-- end modal_habits -->
+
+    <div id="modal_timer" class="modal">
+        <div class="modal__bg close"></div>
+        <div class="modal__body">
+            <div class="modal__content">
+                <div class="modal__close close">x</div>
+                <h2 class="modal__title">Настройки таймера</h2>
+                <div class="modal-timer">    
+                    <div class="modal-timer__item">
+                        <div class="modal-timer__label">Таймер</div>
+                        <input type="text" class="modal-timer__input form__input" value="120">
+                    </div>
+                    <div class="modal-timer__item">
+                        <div class="modal-timer__label">Перерыв</div>
+                        <input type="text" class="modal-timer__input form__input" value="20">
+                    </div>
+                    <div class="modal-timer__buttons">
+                        <button id="habits_add" class="modal-timer__btn btn">Сохранить</button>
+                        <button id="habits_cancel" class="modal-timer__btn btn btn_border close">Отмена</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- end modal_timer -->
 
 
     <div id="modal_finances" class="modal modal_full">

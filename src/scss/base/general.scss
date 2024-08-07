@@ -7,7 +7,7 @@ body{
     font-family: 'OpenSans';
     line-height: 1;
     background: #22211C;
-	color: #CA9969;
+	color: $main-color;
 } 
 .wrapper{
     width: 100%;
@@ -58,15 +58,15 @@ img{
 }
 table{
 	width: 100%;
-	border: 1px solid #CA9969;
+	border: 1px solid $main-color;
 	th{
 		padding: 10px 15px;
 		text-align: left;
-		border: 1px solid #CA9969;
+		border: 1px solid $main-color;
 	}
 	td{
 		padding: 10px 15px;
-		border: 1px solid #CA9969;
+		border: 1px solid $main-color;
 	}
 }
 .show{

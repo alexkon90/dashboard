@@ -4,4 +4,6 @@ window.addEventListener('DOMContentLoaded', () => {
     //= components/modals.js
 
     //= components/habits.js
+
+    //= components/timer.js
 });

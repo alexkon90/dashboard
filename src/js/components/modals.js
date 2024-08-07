@@ -39,6 +39,7 @@ document.addEventListener('keydown', function (e) {
 });
 
 modals('.habits__add', '#modal_habits', '#modal_habits .close');
+modals('.timer__add', '#modal_timer', '#modal_timer .close');
 
 modals('.btn_quartergoals', '#modal_quartergoals', '#modal_quartergoals .close');
 modals('.btn_goals', '#modal_goals', '#modal_goals .close');

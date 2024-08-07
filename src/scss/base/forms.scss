@@ -8,14 +8,14 @@
     font-family: "OpenSans";
     text-align: center;
     font-weight: 700;
-    background: #ca9969;
-    border: 1px solid #ca9969;
+    background: $main-color;
+    border: 1px solid $main-color;
     color: #fff;
     border-radius: 5px;
 }
 .form {
     padding: 30px;
-    border: 1px solid #ca9969;
+    border: 1px solid $main-color;
     font-family: "OpenSans";
     border-radius: 10px;
 }
@@ -31,8 +31,8 @@
     width: 100%;
     height: 40px;
     padding: 0 15px;
-    color: #ca9969;
-    border: 1px solid #ca9969;
+    color: $main-color;
+    border: 1px solid $main-color;
     border-radius: 5px;
 }
 .form__area {
@@ -40,8 +40,8 @@
     width: 100%;
     line-height: 1.2;
     font-family: "OpenSans";
-    color: #ca9969;
-    border: 1px solid #ca9969;
+    color: $main-color;
+    border: 1px solid $main-color;
     border-radius: 10px;
 }
 .form__button {
