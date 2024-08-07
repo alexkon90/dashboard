@@ -13,6 +13,8 @@ const habits = document.querySelector('.habits');
 const habitsContainer = document.querySelector('.habits__list');
 const habitsTrackerMain = document.querySelector('.habits-tracker');
 const habitsTrackerContainer = document.querySelector('.habits-tracker__row');
+const habitsInput = document.querySelector('#habits_input');
+const habitsAdd = document.querySelector('#habits_add');
 const currentDate = new Date(Date.now());
 
 if (localStorage.getItem('habitsHtml')) {
@@ -21,48 +23,49 @@ if (localStorage.getItem('habitsHtml')) {
 
 // Create habit
 function createHabits () {
-    const habitsInput = document.querySelector('#habits_input'),
-          habitsAdd = document.querySelector('#habits_add');
     let counter = 1;
 
-    habitsAdd.addEventListener('click', function (e) {
-        e.preventDefault();     
-        
-        const habs = document.querySelectorAll('.habits-item__name');
-        const habs2 = Array.from(habs);
+    const habs = document.querySelectorAll('.habits-item__name');
+    const habs2 = Array.from(habs);
 
-        if (habitsInput.value === '') {
-            alert('Введи название привычки, долбоеб');
-        }
-        else if (habs2.some(item => item.textContent === habitsInput.value)) {
-            alert('Такая привычка уже существует, склерозный даун');
-        }        
-        else{
-            const habit = document.createElement('div');
-            habit.setAttribute('data-id', counter);
-            habit.classList.add('habits-item');
-            habit.innerHTML = `
-                <div class="habits-item__name">${habitsInput.value}</div>
-                <div class="habits-item__week">
-                    <div class="habits-item__day"></div>
-                    <div class="habits-item__day"></div>
-                    <div class="habits-item__day"></div>
-                    <div class="habits-item__day"></div>
-                    <div class="habits-item__day"></div>
-                    <div class="habits-item__day"></div>
-                    <div class="habits-item__day"></div>
-                </div>
-            `
-            habitsContainer.append(habit)
-            habitsInput.value = '';
-            counter += 1;
-            closeModal();
-        }
-        saveHabits();
-        disableHabits();
-    });
+    if (habitsInput.value === '') {
+        alert('Введи название привычки, долбоеб');
+        document.querySelector('.m_habits-form__message').classList.add('hide');
+    }
+    else if (habs2.some(item => item.textContent === habitsInput.value)) {
+        alert('Такая привычка уже существует, склерозный даун');
+        document.querySelector('.m_habits-form__message').classList.add('hide');
+    }        
+    else{
+        const habit = document.createElement('div');
+        habit.setAttribute('data-id', counter);
+        habit.classList.add('habits-item');
+        habit.innerHTML = `
+            <div class="habits-item__name">${habitsInput.value}</div>
+            <div class="habits-item__week">
+                <div class="habits-item__day"></div>
+                <div class="habits-item__day"></div>
+                <div class="habits-item__day"></div>
+                <div class="habits-item__day"></div>
+                <div class="habits-item__day"></div>
+                <div class="habits-item__day"></div>
+                <div class="habits-item__day"></div>
+            </div>
+        `
+        habitsContainer.append(habit)
+        habitsInput.value = '';
+        counter += 1;
+        document.querySelector('.m_habits-form__message').classList.remove('hide');
+    }
+    saveHabits();
+    disableHabits();
 }
-createHabits();
+habitsAdd.addEventListener('click', createHabits);
+habitsInput.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') {
+        createHabits();
+    }
+});
 
 // Remove/rename habit
 function editHabits () {
@@ -73,8 +76,8 @@ function editHabits () {
             const habitActions = document.createElement('div');
             habitActions.classList.add('habit_actions')
             habitActions.innerHTML = `
-                <div class="habit_remove">x</div>
-                <div class="habit_edit">></div>
+                <div class="habit_remove"><i class="ic ic-remove"></i></div>
+                <div class="habit_edit"><i class="ic ic-edit"></i></div>
             `
             document.querySelectorAll('.habit_actions').forEach(item => {
                 item.remove();
@@ -83,14 +86,14 @@ function editHabits () {
 
         }
 
-        if (target.classList.contains('habit_edit')) {
+        if (target.classList.contains('habit_edit') || target.parentElement.classList.contains('habit_edit')) {
             editName(target.closest('.habits-item__name'), 15);
             document.querySelectorAll('.habit_actions').forEach(item => {
                 item.remove();
             });
         }
 
-        if (target.classList.contains('habit_remove')) {
+        if (target.classList.contains('habit_remove') || target.parentElement.classList.contains('habit_remove')) {
             target.closest('.habits-item').remove();
         }        
     });
@@ -134,7 +137,7 @@ function toggleHabits () {
             document.querySelector('.habit_states').remove();
         }
 
-        if (habitsArr.every(item => item.classList.contains('done'))) {
+        if (habitsArr.length > 1 && habitsArr.every(item => item.classList.contains('done'))) {
             habitsSend.classList.remove('hide');
         }
 

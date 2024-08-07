@@ -608,6 +608,13 @@
     &__btn{
         margin: 0 10px;
     }
+    &__message{
+        display: block;
+        text-align: center;
+        padding-top: 10px;
+        font-weight: 600;
+        color: green;
+    }
 }
 .habit_actions{
     position: absolute;
@@ -619,14 +626,20 @@
     display: flex;
     align-items: center;
     font-size: 20px;
+    overflow: hidden;
     border-radius: 5px;
     div{
-        padding: 5px 12px;
+        padding: 5px 10px;
         cursor: pointer;
         &:hover{
-            color: #fff;
+            background: $main-color-dark;
+        }
+        i{
+            width: 15px;
+            height: 15px;
         }
     }
+    
 }
 .habits-tracker{
     height: 100%;

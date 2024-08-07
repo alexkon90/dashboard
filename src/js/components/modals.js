@@ -21,11 +21,7 @@ function modals(triggerSelector, modalSelector, closeSelector) {
 
     modalClose.forEach(btn => {
         btn.addEventListener('click', () => {
-            modals.forEach(item => {
-                item.classList.remove('open');
-            });
-            
-            modalContent.classList.remove('open');
+            closeModal();
         });
     });
 }
@@ -33,8 +29,14 @@ function modals(triggerSelector, modalSelector, closeSelector) {
 function closeModal () {
     document.querySelectorAll('.modal').forEach(item => {
         item.classList.remove('open');
+        document.querySelector('.m_habits-form__message').classList.add('hide');
     });
 }
+document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+        closeModal();
+    }
+});
 
 modals('.habits__add', '#modal_habits', '#modal_habits .close');
 

@@ -318,6 +318,10 @@ table td {
     background-image: url(../img/icons/icon-skip.svg);
 }
 
+.ic-edit {
+    background-image: url(../img/icons/icon-edit.svg);
+}
+
 /*==============================FORM ELEMENTS==============================*/
 .btn {
     display: inline-flex;
@@ -1202,6 +1206,14 @@ table td {
     margin: 0 10px;
 }
 
+.m_habits-form__message {
+    display: block;
+    text-align: center;
+    padding-top: 10px;
+    font-weight: 600;
+    color: green;
+}
+
 .habit_actions {
     position: absolute;
     top: -5px;
@@ -1212,16 +1224,22 @@ table td {
     display: flex;
     align-items: center;
     font-size: 20px;
+    overflow: hidden;
     border-radius: 5px;
 }
 
 .habit_actions div {
-    padding: 5px 12px;
+    padding: 5px 10px;
     cursor: pointer;
 }
 
 .habit_actions div:hover {
-    color: #fff;
+    background: #B66E28;
+}
+
+.habit_actions div i {
+    width: 15px;
+    height: 15px;
 }
 
 .habits-tracker {
