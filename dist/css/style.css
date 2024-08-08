@@ -266,6 +266,22 @@ table td {
     display: none !important;
 }
 
+.fin {
+    color: #0cbe54;
+}
+
+.prof {
+    color: #1f8efa;
+}
+
+.health {
+    color: #eb5a46;
+}
+
+.self {
+    color: #fc9228;
+}
+
 @keyframes fade {
     0% {
         opacity: 0;
@@ -1876,7 +1892,7 @@ table td {
 
 .goals-desc__text {
     margin-bottom: 15px;
-    line-height: 1.2;
+    line-height: 1.3;
 }
 
 .goals-desc-history__title {

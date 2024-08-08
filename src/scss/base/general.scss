@@ -75,6 +75,18 @@ table{
 .hide{
     display: none !important;
 }
+.fin{
+    color: $money;
+}
+.prof{
+    color: $prof;
+}
+.health{
+    color: $health;
+}
+.self{
+    color: $self;
+}
 @keyframes fade {
     0% {
         opacity: 0;

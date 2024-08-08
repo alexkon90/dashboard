@@ -159,9 +159,9 @@ function disableHabits () {
                 parentElement[i].classList.add('disabled');
             }
         }
+        saveHabits();
     });
 
-    saveHabits();
 }
 disableHabits();
 

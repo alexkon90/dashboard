@@ -264,9 +264,9 @@ window.addEventListener('DOMContentLoaded', () => {
                     parentElement[i].classList.add('disabled');
                 }
             }
+            saveHabits();
         });
     
-        saveHabits();
     }
     disableHabits();
     
